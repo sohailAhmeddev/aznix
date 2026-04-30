@@ -1,0 +1,28 @@
+{
+  "name": "aznix-holding",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.462.0",
+    "next": "15.3.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.6",
+    "@types/react": "19.1.2",
+    "autoprefixer": "10.4.19",
+    "eslint": "8.57.0",
+    "eslint-config-next": "15.3.1",
+    "postcss": "8.4.37",
+    "tailwindcss": "3.4.5",
+    "typescript": "5.5.4"
+  }
+}

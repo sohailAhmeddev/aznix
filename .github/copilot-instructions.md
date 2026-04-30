@@ -1,0 +1,3 @@
+- [x] Create a Next.js replica of the Ordway Labs homepage in this workspace.
+- [x] Use Next.js App Router, TypeScript, and Tailwind CSS.
+- [x] Include instructions for installing dependencies and running the app.
