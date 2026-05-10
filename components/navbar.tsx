@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { navigation, siteConfig } from '@/data/site';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -19,14 +20,21 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
       <div className="mx-auto max-w-7xl rounded-full border border-white/10 bg-slate-950/70 px-5 py-3 backdrop-blur-xl">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-400 text-sm font-bold text-slate-950">
+          <Link href="/" className="flex items-center gap-3 text-white py-0">
+            {/* <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-400 text-sm font-bold text-slate-950">
               A
-            </span>
-            <div>
-              <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Holding Company</p>
-              <p className="text-base font-semibold">{siteConfig.name}</p>
-            </div>
+            </span> */}
+            <Image className='w-[140px] object-cover h-[80px]' src={'/logohorzi-removebg-preview.png'} alt={'logo'} width={80} height={40}/>
+            {/* <div>
+              <p className="text-[9px] uppercase tracking-[0.28em] text-slate-400">
+                {/* Holding Company */}
+                {/* Aznix Solutions
+                </p>
+              <p className="text-base font-semibold"> */}
+                {/* {siteConfig.name} */}
+                {/* Aznix
+                </p>
+            </div> */} 
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">

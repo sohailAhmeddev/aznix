@@ -34,6 +34,7 @@ export const navigation: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Ecosystem', href: '/ecosystem' },
+  { label: 'VPS Hosting', href: '/vps-hosting' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Innovation', href: '/innovation' },
   { label: 'Partnerships', href: '/partnerships' },
@@ -398,6 +399,7 @@ export const footerColumns = [
     title: 'Company',
     links: [
       { label: 'About', href: '/about' },
+      { label: 'VPS Hosting', href: '/vps-hosting' },
       { label: 'Innovation', href: '/innovation' },
       { label: 'Contact', href: '/contact' },
     ],
