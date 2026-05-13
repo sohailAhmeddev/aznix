@@ -25,7 +25,7 @@ export function Navbar() {
               A
             </span> */}
             <Image
-              className="h-[50px] w-[140px] object-contain"
+              className="h-[50px] w-[140px] object-cover"
               src="/logo.png"
               alt="Aznix logo"
               width={140}
