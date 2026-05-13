@@ -24,7 +24,14 @@ export function Navbar() {
             {/* <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-400 text-sm font-bold text-slate-950">
               A
             </span> */}
-            <Image className='w-[140px] object-cover h-[80px]' src={'/logohorzi-removebg-preview.png'} alt={'logo'} width={80} height={40}/>
+            <Image
+              className="h-[50px] w-[140px] object-contain"
+              src="/logo.png"
+              alt="Aznix logo"
+              width={140}
+              height={50}
+              priority
+            />
             {/* <div>
               <p className="text-[9px] uppercase tracking-[0.28em] text-slate-400">
                 {/* Holding Company */}
