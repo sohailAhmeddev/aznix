@@ -4,7 +4,7 @@ import { AnimatedSection } from '@/components/animated-section';
 import { ContactForm } from '@/components/contact-form';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeading } from '@/components/section-heading';
-import { contactDetails } from '@/data/site';
+import { contactDetails } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 

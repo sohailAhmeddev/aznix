@@ -6,7 +6,7 @@ import { HeroSection } from '@/components/hero-section';
 import { IndustryCard } from '@/components/industry-card';
 import { SectionHeading } from '@/components/section-heading';
 import { StatsCounter } from '@/components/stats-counter';
-import { ecosystemUnits, heroActions, industries, siteConfig, stats } from '@/data/site';
+import { ecosystemUnits, heroActions, industries, siteConfig, stats } from '@/app/data/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createMetadata({

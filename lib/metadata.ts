@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { siteConfig } from '@/data/site';
+import { siteConfig } from '@/app/data/site';
 
 type MetadataInput = {
   title: string;

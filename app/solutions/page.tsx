@@ -5,7 +5,7 @@ import { AnimatedSection } from '@/components/animated-section';
 import { CTASection } from '@/components/cta-section';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeading } from '@/components/section-heading';
-import { solutions } from '@/data/site';
+import { solutions } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 

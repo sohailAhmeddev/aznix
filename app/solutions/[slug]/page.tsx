@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { AnimatedSection } from '@/components/animated-section';
 import { CTASection } from '@/components/cta-section';
 import { SectionHeading } from '@/components/section-heading';
-import { getSolutionBySlug, solutions } from '@/data/site';
+import { getSolutionBySlug, solutions } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 

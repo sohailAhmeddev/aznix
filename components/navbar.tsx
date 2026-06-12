@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { navigation, siteConfig } from '@/data/site';
+import { navigation, siteConfig } from '@/app/data/site';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 

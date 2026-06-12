@@ -4,7 +4,7 @@ import { ContactForm } from '@/components/contact-form';
 import { PageHero } from '@/components/page-hero';
 import { PartnerCard } from '@/components/partner-card';
 import { SectionHeading } from '@/components/section-heading';
-import { partnerTypes } from '@/data/site';
+import { partnerTypes } from '@/app/data/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createMetadata({

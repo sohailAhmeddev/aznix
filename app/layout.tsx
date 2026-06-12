@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
-import { siteConfig } from "@/data/site";
+import { siteConfig } from "@/app/data/site";
 import { organizationSchema } from "@/lib/metadata";
 import "./globals.css";
 

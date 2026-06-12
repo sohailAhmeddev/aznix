@@ -3,7 +3,7 @@ import { AnimatedSection } from '@/components/animated-section';
 import { CTASection } from '@/components/cta-section';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeading } from '@/components/section-heading';
-import { initiatives } from '@/data/site';
+import { initiatives } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 

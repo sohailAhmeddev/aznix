@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { footerColumns, siteConfig } from '@/data/site';
+import { footerColumns, siteConfig } from '@/app/data/site';
 
 export function Footer() {
   return (
