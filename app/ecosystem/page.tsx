@@ -37,31 +37,31 @@ export default function EcosystemPage() {
               return (
                 <article
                   key={unit.name}
-                  className="grid gap-6 rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:grid-cols-[0.72fr_1fr_0.85fr]"
+                  className="grid gap-6 rounded-[2rem] border border-slate-200 bg-white p-8 lg:grid-cols-[0.72fr_1fr_0.85fr]"
                 >
                   <div>
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-400/25 bg-brand-400/10 text-brand-300">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <p className="mt-5 text-sm uppercase tracking-[0.3em] text-slate-400">{unit.sector}</p>
-                    <h2 className="mt-3 text-3xl font-semibold text-white">{unit.name}</h2>
+                    <p className="mt-5 text-sm uppercase tracking-[0.3em] text-slate-600">{unit.sector}</p>
+                    <h2 className="mt-3 text-3xl font-semibold text-slate-950">{unit.name}</h2>
                   </div>
                   <div>
-                    <p className="text-base leading-8 text-slate-300">{unit.description}</p>
+                    <p className="text-base leading-8 text-slate-700">{unit.description}</p>
                     <div className="mt-6 flex flex-wrap gap-2">
                       {unit.services.map((service) => (
                         <span
                           key={service}
-                          className="rounded-full border border-white/10 bg-slate-950/60 px-3 py-1 text-xs text-slate-300"
+                          className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700"
                         >
                           {service}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6">
+                  <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
                     <p className="text-sm uppercase tracking-[0.28em] text-brand-300">Future roadmap</p>
-                    <p className="mt-4 text-base leading-7 text-slate-300">{unit.roadmap}</p>
+                    <p className="mt-4 text-base leading-7 text-slate-700">{unit.roadmap}</p>
                   </div>
                 </article>
               );
@@ -80,3 +80,4 @@ export default function EcosystemPage() {
     </>
   );
 }
+

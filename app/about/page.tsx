@@ -40,9 +40,9 @@ export default function AboutPage() {
               'To become a globally recognized innovation holding company for critical digital infrastructure.',
             ],
           ].map(([title, body]) => (
-            <div key={title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-7">
-              <h2 className="text-2xl font-semibold text-white">{title}</h2>
-              <p className="mt-4 text-base leading-8 text-slate-300">{body}</p>
+            <div key={title} className="rounded-[1.75rem] border border-slate-200 bg-white p-7">
+              <h2 className="text-2xl font-semibold text-slate-950">{title}</h2>
+              <p className="mt-4 text-base leading-8 text-slate-700">{body}</p>
             </div>
           ))}
         </div>
@@ -60,12 +60,12 @@ export default function AboutPage() {
               const Icon = iconMap[pillar.icon];
 
               return (
-                <article key={pillar.title} className="rounded-[1.5rem] border border-white/10 bg-slate-950/55 p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-brand-300">
+                <article key={pillar.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-300">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold text-white">{pillar.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">{pillar.description}</p>
+                  <h3 className="mt-5 text-xl font-semibold text-slate-950">{pillar.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">{pillar.description}</p>
                 </article>
               );
             })}
@@ -83,15 +83,15 @@ export default function AboutPage() {
             />
             <div className="mt-10 grid gap-5">
               {leadership.map((member) => (
-                <article key={member.name} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+                <article key={member.name} className="rounded-[1.5rem] border border-slate-200 bg-white p-6">
                   <p className="text-sm uppercase tracking-[0.28em] text-brand-300">{member.title}</p>
-                  <h3 className="mt-3 text-2xl font-semibold text-white">{member.name}</h3>
-                  <p className="mt-4 text-base leading-7 text-slate-300">{member.description}</p>
+                  <h3 className="mt-3 text-2xl font-semibold text-slate-950">{member.name}</h3>
+                  <p className="mt-4 text-base leading-7 text-slate-700">{member.description}</p>
                 </article>
               ))}
             </div>
           </div>
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8">
             <SectionHeading
               eyebrow="Timeline"
               title="From thesis to ecosystem"
@@ -114,3 +114,4 @@ export default function AboutPage() {
     </>
   );
 }
+

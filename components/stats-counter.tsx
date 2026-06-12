@@ -40,14 +40,15 @@ export function StatsCounter({ stat }: StatsCounterProps) {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="rounded-[1.75rem] border border-white/10 bg-white/5 p-7 backdrop-blur"
+      className="rounded-[1.75rem] border border-slate-200 bg-white p-7 "
     >
-      <p className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+      <p className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
         {stat.prefix}
         {count}
         {stat.suffix}
       </p>
-      <p className="mt-3 text-sm uppercase tracking-[0.28em] text-slate-400">{stat.label}</p>
+      <p className="mt-3 text-sm uppercase tracking-[0.28em] text-slate-600">{stat.label}</p>
     </motion.div>
   );
 }
+

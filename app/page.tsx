@@ -42,7 +42,7 @@ export default function HomePage() {
 
       <AnimatedSection className="px-6 py-20 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur sm:p-10">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8  sm:p-10">
             <SectionHeading
               eyebrow="Vision"
               title="Building scalable digital ecosystems for the next generation of business"
@@ -56,9 +56,9 @@ export default function HomePage() {
               ['Scalability', 'Infrastructure that expands across industries, teams, and regions.'],
               ['Digital Infrastructure', 'Core platforms powering modern business operations.'],
             ].map(([title, body]) => (
-              <div key={title} className="rounded-[1.75rem] border border-white/10 bg-slate-950/55 p-6">
-                <p className="text-lg font-semibold text-white">{title}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{body}</p>
+              <div key={title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+                <p className="text-lg font-semibold text-slate-950">{title}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{body}</p>
               </div>
             ))}
           </div>
@@ -106,3 +106,4 @@ export default function HomePage() {
     </>
   );
 }
+

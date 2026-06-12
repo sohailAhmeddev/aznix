@@ -1,0 +1,42 @@
+.floatingPill {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 9999px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+.pillDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #1a6b4a;
+}
+
+.pillTop {
+  top: -1rem;
+  right: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.pillBottom {
+  bottom: 1rem;
+  left: -1.5rem;
+  animation: float 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
