@@ -74,9 +74,9 @@ export default function VPSHostingPage() {
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {hostingFeatures.map((feature) => (
-              <article key={feature.title} className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
-                <h2 className="text-2xl font-semibold text-white">{feature.title}</h2>
-                <p className="mt-4 text-base leading-7 text-slate-300">{feature.description}</p>
+              <article key={feature.title} className="rounded-[2rem] border border-slate-200 bg-white p-8">
+                <h2 className="text-2xl font-semibold text-slate-950">{feature.title}</h2>
+                <p className="mt-4 text-base leading-7 text-slate-700">{feature.description}</p>
               </article>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function VPSHostingPage() {
 
       <AnimatedSection className="px-6 py-10 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_1.05fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-slate-950/55 p-8 sm:p-10">
+          <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 sm:p-10">
             <SectionHeading
               eyebrow="Use Cases"
               title="Designed for teams that need more than shared hosting"
@@ -94,7 +94,7 @@ export default function VPSHostingPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {useCases.map((item) => (
-              <div key={item} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+              <div key={item} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 text-sm text-slate-700">
                 {item}
               </div>
             ))}
@@ -112,14 +112,14 @@ export default function VPSHostingPage() {
           />
           <div className="mt-12 grid gap-6 xl:grid-cols-3">
             {plans.map((plan) => (
-              <article key={plan.name} className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+              <article key={plan.name} className="rounded-[2rem] border border-slate-200 bg-white p-8">
                 <p className="text-sm uppercase tracking-[0.25em] text-brand-300">{plan.name}</p>
-                <p className="mt-4 text-base leading-7 text-slate-300">{plan.idealFor}</p>
+                <p className="mt-4 text-base leading-7 text-slate-700">{plan.idealFor}</p>
                 <div className="mt-6 space-y-3">
                   {plan.specs.map((spec) => (
                     <div
                       key={spec}
-                      className="rounded-full border border-white/10 bg-slate-950/55 px-4 py-2 text-sm text-slate-200"
+                      className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-700"
                     >
                       {spec}
                     </div>
@@ -148,3 +148,4 @@ export default function VPSHostingPage() {
     </>
   );
 }
+

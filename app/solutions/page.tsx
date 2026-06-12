@@ -5,7 +5,7 @@ import { AnimatedSection } from '@/components/animated-section';
 import { CTASection } from '@/components/cta-section';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeading } from '@/components/section-heading';
-import { solutions } from '@/data/site';
+import { solutions } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 
@@ -37,32 +37,32 @@ export default function SolutionsPage() {
               const Icon = iconMap[item.icon];
 
               return (
-                <article key={item.title} className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+                <article key={item.title} className="rounded-[2rem] border border-slate-200 bg-white p-8">
                   <div className="flex items-start gap-4">
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-400/10 text-brand-300">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-semibold text-white">{item.title}</h2>
-                      <p className="mt-4 text-sm uppercase tracking-[0.25em] text-slate-500">Problem</p>
-                      <p className="mt-2 text-base leading-7 text-slate-300">{item.problem}</p>
+                      <h2 className="text-2xl font-semibold text-slate-950">{item.title}</h2>
+                      <p className="mt-4 text-sm uppercase tracking-[0.25em] text-slate-600">Problem</p>
+                      <p className="mt-2 text-base leading-7 text-slate-700">{item.problem}</p>
                     </div>
                   </div>
                   <div className="mt-7 grid gap-5 md:grid-cols-2">
-                    <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/55 p-5">
+                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
                       <p className="text-sm uppercase tracking-[0.25em] text-brand-300">Solution</p>
-                      <p className="mt-3 text-base leading-7 text-slate-300">{item.solution}</p>
+                      <p className="mt-3 text-base leading-7 text-slate-700">{item.solution}</p>
                     </div>
-                    <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/55 p-5">
+                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
                       <p className="text-sm uppercase tracking-[0.25em] text-brand-300">Impact</p>
-                      <p className="mt-3 text-base leading-7 text-slate-300">{item.impact}</p>
+                      <p className="mt-3 text-base leading-7 text-slate-700">{item.impact}</p>
                     </div>
                   </div>
                   <div className="mt-7 flex flex-wrap gap-2">
                     {item.capabilities.map((capability) => (
                       <span
                         key={capability}
-                        className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300"
+                        className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700"
                       >
                         {capability}
                       </span>
@@ -70,7 +70,7 @@ export default function SolutionsPage() {
                   </div>
                   <Link
                     href={`/solutions/${item.slug}`}
-                    className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-brand-400/40 hover:bg-white/5"
+                    className="mt-7 inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:border-brand-400/40 hover:bg-white"
                   >
                     Explore Service
                     <ArrowRight className="h-4 w-4" />
@@ -92,3 +92,4 @@ export default function SolutionsPage() {
     </>
   );
 }
+

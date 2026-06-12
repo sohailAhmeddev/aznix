@@ -4,7 +4,7 @@ import { AnimatedSection } from '@/components/animated-section';
 import { ContactForm } from '@/components/contact-form';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeading } from '@/components/section-heading';
-import { contactDetails } from '@/data/site';
+import { contactDetails } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 
@@ -36,12 +36,12 @@ export default function ContactPage() {
               {contactDetails.map((item) => {
                 const Icon = iconMap[item.icon];
                 const content = (
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 transition hover:border-brand-400/30">
+                  <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 transition hover:border-brand-400/30">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-400/10 text-brand-300">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="mt-5 text-sm uppercase tracking-[0.25em] text-slate-500">{item.label}</p>
-                    <p className="mt-3 text-lg text-white">{item.value}</p>
+                    <p className="mt-5 text-sm uppercase tracking-[0.25em] text-slate-600">{item.label}</p>
+                    <p className="mt-3 text-lg text-slate-950">{item.value}</p>
                   </div>
                 );
 
@@ -61,3 +61,4 @@ export default function ContactPage() {
     </>
   );
 }
+

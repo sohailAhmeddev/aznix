@@ -2,29 +2,29 @@
 
 export function ContactForm() {
   return (
-    <form className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">
+    <form className="rounded-[2rem] border border-slate-200 bg-white p-6  sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm text-slate-300">Name</span>
+          <span className="text-sm text-slate-700">Name</span>
           <input className="form-input" type="text" name="name" placeholder="Your name" />
         </label>
         <label className="space-y-2">
-          <span className="text-sm text-slate-300">Email</span>
+          <span className="text-sm text-slate-700">Email</span>
           <input className="form-input" type="email" name="email" placeholder="you@company.com" />
         </label>
       </div>
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm text-slate-300">Company</span>
+          <span className="text-sm text-slate-700">Company</span>
           <input className="form-input" type="text" name="company" placeholder="Company name" />
         </label>
         <label className="space-y-2">
-          <span className="text-sm text-slate-300">Subject</span>
+          <span className="text-sm text-slate-700">Subject</span>
           <input className="form-input" type="text" name="subject" placeholder="How can we help?" />
         </label>
       </div>
       <label className="mt-5 block space-y-2">
-        <span className="text-sm text-slate-300">Message</span>
+        <span className="text-sm text-slate-700">Message</span>
         <textarea className="form-input min-h-36 resize-y" name="message" placeholder="Tell us about your partnership, venture, or infrastructure objective." />
       </label>
       <button
@@ -36,3 +36,4 @@ export function ContactForm() {
     </form>
   );
 }
+

@@ -3,7 +3,7 @@ import { AnimatedSection } from '@/components/animated-section';
 import { CTASection } from '@/components/cta-section';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeading } from '@/components/section-heading';
-import { initiatives } from '@/data/site';
+import { initiatives } from '@/app/data/site';
 import { iconMap } from '@/lib/icons';
 import { createMetadata } from '@/lib/metadata';
 
@@ -29,17 +29,17 @@ export default function InnovationPage() {
             const Icon = iconMap[initiative.icon];
 
             return (
-              <article key={initiative.title} className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+              <article key={initiative.title} className="rounded-[2rem] border border-slate-200 bg-white p-8">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-400/10 text-brand-300">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h2 className="mt-6 text-3xl font-semibold text-white">{initiative.title}</h2>
-                <p className="mt-4 text-base leading-8 text-slate-300">{initiative.description}</p>
+                <h2 className="mt-6 text-3xl font-semibold text-slate-950">{initiative.title}</h2>
+                <p className="mt-4 text-base leading-8 text-slate-700">{initiative.description}</p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {initiative.focus.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/10 bg-slate-950/55 px-3 py-1 text-xs text-slate-300"
+                      className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700"
                     >
                       {item}
                     </span>
@@ -52,7 +52,7 @@ export default function InnovationPage() {
       </AnimatedSection>
 
       <AnimatedSection className="px-6 py-20 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/5 p-8 sm:p-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-slate-200 bg-white p-8 sm:p-10">
           <SectionHeading
             eyebrow="R&D Positioning"
             title="Innovation at Aznix is structured, commercial, and infrastructure-led"
@@ -71,3 +71,4 @@ export default function InnovationPage() {
     </>
   );
 }
+

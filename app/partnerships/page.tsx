@@ -4,7 +4,7 @@ import { ContactForm } from '@/components/contact-form';
 import { PageHero } from '@/components/page-hero';
 import { PartnerCard } from '@/components/partner-card';
 import { SectionHeading } from '@/components/section-heading';
-import { partnerTypes } from '@/data/site';
+import { partnerTypes } from '@/app/data/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createMetadata({
@@ -46,7 +46,7 @@ export default function PartnershipsPage() {
               title="Start the conversation"
               description="Share your investment mandate, collaboration objective, or platform opportunity and our team will follow up."
             />
-            <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 text-base leading-8 text-slate-300">
+            <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 text-base leading-8 text-slate-700">
               Aznix seeks relationships that strengthen venture velocity, product advantage, and infrastructure depth across the group.
             </div>
           </div>
@@ -56,3 +56,4 @@ export default function PartnershipsPage() {
     </>
   );
 }
+

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seamless Multi-Currency Business Accounts | Payset</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #1a6b4a;
+    --green-light: #e8f5ee;
+    --green-mid: #2d8a61;
+    --green-dark: #0e4a32;
+    --beige: #F5F2EF;
+    --beige-dark: #e8e3dc;
+    --charcoal: #1c1c1c;
+    --charcoal-mid: #3a3a3a;
+    --gray: #6b6b6b;
+    --gray-light: #9a9a9a;
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    --border: rgba(0,0,0,0.09);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--beige);
+    color: var(--charcoal);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245,242,239,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--green-dark);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+  }
+  .logo span { color: var(--green); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--charcoal-mid);
+    font-size: 0.9rem;
+    font-weight: 450;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+
+  .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+  .btn-ghost {
+    background: transparent; border: 1.5px solid var(--border);
+    padding: 0.45rem 1.1rem; border-radius: 100px;
+    font-family: inherit; font-size: 0.88rem; font-weight: 500;
+    color: var(--charcoal); cursor: pointer; transition: all 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+  .btn-primary {
+    background: var(--green-dark); color: #fff;
+    border: none; padding: 0.5rem 1.25rem; border-radius: 100px;
+    font-family: inherit; font-size: 0.88rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--green); }
+
+  /* HERO */
+  .hero {
+    padding: 6rem 5% 5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: center; max-width: 1300px; margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--green-light); color: var(--green-dark);
+    font-size: 0.8rem; font-weight: 500; padding: 0.3rem 0.9rem;
+    border-radius: 100px; margin-bottom: 1.5rem; letter-spacing: 0.03em;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--green); }
+
+  .hero-sub {
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  .hero-ctas { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+
+  .hero-ctas .btn-primary { padding: 0.7rem 1.8rem; font-size: 0.95rem; }
+  .hero-ctas .btn-ghost { padding: 0.7rem 1.8rem; font-size: 0.95rem; }
+
+  .trust-row {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-top: 2rem; font-size: 0.82rem; color: var(--gray-light);
+  }
+  .stars { color: #00b67a; font-size: 0.9rem; }
+
+  /* HERO CARD */
+  .hero-visual {
+    position: relative;
+  }
+
+  .dashboard-card {
+    background: var(--white);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  .dash-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .dash-title { font-size: 0.82rem; color: var(--gray); font-weight: 500; }
+  .dash-badge {
+    background: var(--green-light); color: var(--green-dark);
+    font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem;
+    border-radius: 100px; letter-spacing: 0.02em;
+  }
+
+  .balance-display { margin-bottom: 1.5rem; }
+  .balance-label { font-size: 0.78rem; color: var(--gray-light); margin-bottom: 0.3rem; }
+  .balance-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem; color: var(--charcoal); letter-spacing: -0.03em;
+  }
+  .balance-sub { font-size: 0.8rem; color: var(--gray-light); margin-top: 0.2rem; }
+
+  .currency-chips {
+    display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;
+  }
+  .chip {
+    background: var(--beige); border: 1px solid var(--beige-dark);
+    border-radius: 100px; padding: 0.3rem 0.75rem;
+    font-size: 0.78rem; font-weight: 500; color: var(--charcoal-mid);
+    display: flex; align-items: center; gap: 0.35rem;
+  }
+  .chip-flag { font-size: 0.9rem; }
+
+  .txn-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .txn {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 0.9rem;
+    background: var(--beige); border-radius: 12px;
+  }
+  .txn-left { display: flex; align-items: center; gap: 0.75rem; }
+  .txn-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+  }
+  .txn-icon.green { background: var(--green-light); color: var(--green-dark); }
+  .txn-icon.blue { background: #e6f1fb; color: #0c447c; }
+  .txn-icon.amber { background: #faeeda; color: #633806; }
+  .txn-name { font-size: 0.82rem; font-weight: 500; }
+  .txn-date { font-size: 0.72rem; color: var(--gray-light); }
+  .txn-amount { font-size: 0.85rem; font-weight: 600; }
+  .txn-amount.credit { color: var(--green); }
+  .txn-amount.debit { color: var(--charcoal-mid); }
+
+  .floating-pill {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    white-space: nowrap;
+  }
+  .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .pill-top { top: -1rem; right: 1.5rem; animation: float 3s ease-in-out infinite; }
+  .pill-bottom { bottom: 1rem; left: -1.5rem; animation: float 3s ease-in-out infinite 1.5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* FEATURES STRIP */
+  .features-strip {
+    background: var(--green-dark);
+    padding: 1.25rem 5%;
+    display: flex; gap: 3rem; justify-content: center;
+    flex-wrap: wrap;
+  }
+  .feat-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    color: rgba(255,255,255,0.8); font-size: 0.85rem;
+  }
+  .feat-item svg { flex-shrink: 0; }
+
+  /* SECTION COMMON */
+  section { padding: 5rem 5%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.78rem; font-weight: 600; color: var(--green);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.15; letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--gray); font-size: 1rem; line-height: 1.7;
+    max-width: 560px; margin-bottom: 2.5rem;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--white);
+    border-radius: 20px; border: 1px solid var(--border);
+    padding: 2.5rem 3rem;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; max-width: 1100px; margin: 3rem auto;
+    text-align: center;
+  }
+  .stat-item { border-right: 1px solid var(--border); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem; color: var(--green-dark);
+    letter-spacing: -0.04em; margin-bottom: 0.3rem;
+  }
+  .stat-label { font-size: 0.82rem; color: var(--gray); }
+
+  /* SERVICES GRID */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin-top: 2.5rem;
+  }
+
+  .service-card {
+    background: var(--white); border-radius: 20px;
+    border: 1px solid var(--border); padding: 1.75rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .service-card.green-card {
+    background: var(--green-dark); color: #fff;
+    border-color: transparent;
+  }
+
+  .service-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--green-light); display: flex; align-items: center;
+    justify-content: center; margin-bottom: 1.2rem;
+  }
+  .service-card.green-card .service-icon { background: rgba(255,255,255,0.15); }
+
+  .service-icon svg { width: 22px; height: 22px; }
+
+  .service-card h3 {
+    font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .service-card.green-card h3 { color: #fff; }
+
+  .service-card p {
+    font-size: 0.85rem; color: var(--gray); line-height: 1.6;
+  }
+  .service-card.green-card p { color: rgba(255,255,255,0.7); }
+
+  .service-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: var(--green); font-size: 0.82rem; font-weight: 500;
+    text-decoration: none; margin-top: 1rem;
+    transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 0.65rem; }
+  .service-card.green-card .service-link { color: rgba(255,255,255,0.85); }
+
+  /* SUPPORT SECTION */
+  .support-section {
+    background: var(--white);
+    padding: 5rem 5%;
+  }
+
+  .support-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center;
+  }
+
+  .support-features { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+
+  .support-feat {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.25rem; border-radius: 16px;
+    border: 1px solid var(--border); background: var(--beige);
+  }
+
+  .support-feat-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--green-light); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .support-feat-icon svg { width: 20px; height: 20px; }
+
+  .support-feat h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .support-feat p { font-size: 0.83rem; color: var(--gray); line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  .testimonials-section { padding: 5rem 5%; }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin-top: 2.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--white); border-radius: 20px;
+    border: 1px solid var(--border); padding: 1.75rem;
+  }
+
+  .stars-row {
+    color: #00b67a; font-size: 0.85rem; margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem; color: var(--charcoal-mid);
+    line-height: 1.7; margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  .testimonial-author { font-size: 0.82rem; font-weight: 600; color: var(--charcoal); }
+  .testimonial-company { font-size: 0.78rem; color: var(--gray-light); }
+
+  /* SECURITY */
+  .security-section {
+    background: var(--green-dark); padding: 5rem 5%;
+    color: #fff;
+  }
+  .security-inner { max-width: 1200px; margin: 0 auto; }
+  .security-inner .section-title { color: #fff; }
+  .security-inner .section-tag { color: #68c99b; }
+  .security-inner .section-sub { color: rgba(255,255,255,0.65); }
+
+  .security-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin-top: 2.5rem;
+  }
+
+  .security-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 1.75rem;
+  }
+
+  .security-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #fff; }
+  .security-card p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+  .sec-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+
+  /* SOLUTIONS SECTION */
+  .solutions-section { padding: 5rem 5%; }
+  .solutions-inner { max-width: 1200px; margin: 0 auto; }
+
+  .solutions-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin-top: 2.5rem;
+  }
+
+  .solution-card {
+    background: var(--white); border-radius: 20px;
+    border: 1px solid var(--border); padding: 1.75rem;
+    display: flex; flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .solution-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .solution-card .badge {
+    display: inline-block;
+    background: var(--green-light); color: var(--green-dark);
+    font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.7rem;
+    border-radius: 100px; margin-bottom: 1rem; letter-spacing: 0.02em;
+  }
+  .solution-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .solution-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; flex: 1; }
+
+  /* CTA BANNER */
+  .cta-banner {
+    margin: 0 5% 5rem;
+    background: var(--green-dark);
+    border-radius: 28px; padding: 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; max-width: 1100px; margin-left: auto; margin-right: auto;
+    margin-bottom: 5rem;
+  }
+
+  .cta-banner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #fff; line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+  .cta-banner p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-top: 0.5rem; }
+  .cta-banner-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+  .btn-white {
+    background: #fff; color: var(--green-dark);
+    border: none; padding: 0.7rem 1.8rem; border-radius: 100px;
+    font-family: inherit; font-size: 0.92rem; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+    text-decoration: none; display: inline-block; white-space: nowrap;
+  }
+  .btn-white:hover { background: var(--green-light); }
+  .btn-outline-white {
+    background: transparent; color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.35); padding: 0.7rem 1.6rem; border-radius: 100px;
+    font-family: inherit; font-size: 0.92rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-outline-white:hover { border-color: #fff; }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.65);
+    padding: 4rem 5% 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr repeat(5, 1fr);
+    gap: 2rem; max-width: 1200px; margin: 0 auto;
+    padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo { color: #fff; font-size: 1.4rem; }
+  .footer-brand .logo span { color: #68c99b; }
+  .footer-brand p {
+    font-size: 0.8rem; line-height: 1.7;
+    margin-top: 1rem; color: rgba(255,255,255,0.45);
+    max-width: 240px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.85);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul li a {
+    font-size: 0.82rem; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: #68c99b; }
+
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 680px; }
+  .footer-legal { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid, .testimonials-grid, .security-grid, .solutions-grid { grid-template-columns: 1fr 1fr; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .support-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .cta-banner { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid, .testimonials-grid, .security-grid, .solutions-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .features-strip { gap: 1.5rem; flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Pay<span>set</span></a>
+  <ul class="nav-links">
+    <li><a href="#">Financial Services</a></li>
+    <li><a href="#">Who we serve</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Company</a></li>
+    <li><a href="#">Pricing</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#" class="btn-ghost">Login</a>
+    <a href="#" class="btn-primary">Get started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 5rem; padding-bottom: 4rem;">
+  <div>
+    <div class="hero-tag">Ready, set, pay</div>
+    <h1>Fast, reliable <em>multi-currency</em> business accounts</h1>
+    <p class="hero-sub">Personalized service for all businesses, big or small. Hold, send, and receive funds in 34 currencies across 180+ countries.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">Get Started</a>
+      <a href="#" class="btn-ghost">Contact sales</a>
+    </div>
+    <div class="trust-row">
+      <span class="stars">★★★★★</span>
+      <span>Rated Excellent on Trustpilot</span>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="floating-pill pill-top">
+      <div class="pill-dot"></div>
+      <span>Live exchange rates</span>
+    </div>
+    <div class="dashboard-card">
+      <div class="dash-header">
+        <span class="dash-title">My Account</span>
+        <span class="dash-badge">34 currencies</span>
+      </div>
+      <div class="balance-display">
+        <div class="balance-label">Total balance</div>
+        <div class="balance-amount">€84,250.00</div>
+        <div class="balance-sub">Across 6 currencies</div>
+      </div>
+      <div class="currency-chips">
+        <div class="chip"><span class="chip-flag">🇬🇧</span> GBP</div>
+        <div class="chip"><span class="chip-flag">🇺🇸</span> USD</div>
+        <div class="chip"><span class="chip-flag">🇪🇺</span> EUR</div>
+        <div class="chip"><span class="chip-flag">🇩🇰</span> DKK</div>
+        <div class="chip"><span class="chip-flag">🇨🇦</span> CAD</div>
+      </div>
+      <div class="txn-list">
+        <div class="txn">
+          <div class="txn-left">
+            <div class="txn-icon green">WW</div>
+            <div>
+              <div class="txn-name">Wacky Wanders OU</div>
+              <div class="txn-date">Today, 10:42</div>
+            </div>
+          </div>
+          <div class="txn-amount credit">+€49,250</div>
+        </div>
+        <div class="txn">
+          <div class="txn-left">
+            <div class="txn-icon blue">MB</div>
+            <div>
+              <div class="txn-name">Marketing Beasts Ltd</div>
+              <div class="txn-date">Today, 09:15</div>
+            </div>
+          </div>
+          <div class="txn-amount debit">−250 DKK</div>
+        </div>
+        <div class="txn">
+          <div class="txn-left">
+            <div class="txn-icon amber">AC</div>
+            <div>
+              <div class="txn-name">ABC Capital SL</div>
+              <div class="txn-date">Yesterday</div>
+            </div>
+          </div>
+          <div class="txn-amount credit">+£9,250</div>
+        </div>
+      </div>
+    </div>
+    <div class="floating-pill pill-bottom">
+      <div class="pill-dot"></div>
+      <span>FCA Regulated · Funds Safeguarded</span>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="features-strip">
+  <div class="feat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    180+ countries supported
+  </div>
+  <div class="feat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    34 currencies held
+  </div>
+  <div class="feat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    38 currency pairs exchanged instantly
+  </div>
+  <div class="feat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    FCA Authorised
+  </div>
+  <div class="feat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    3× faster global payments
+  </div>
+</div>
+
+<!-- STATS -->
+<div style="padding: 4rem 5% 0; max-width: 1300px; margin: 0 auto;">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">34</div><div class="stat-label">Currencies supported</div></div>
+    <div class="stat-item"><div class="stat-num">180+</div><div class="stat-label">Countries worldwide</div></div>
+    <div class="stat-item"><div class="stat-num">38</div><div class="stat-label">FX currency pairs</div></div>
+    <div class="stat-item"><div class="stat-num">3×</div><div class="stat-label">Faster global payments</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" style="padding: 4rem 5%;">
+  <div class="section-inner">
+    <div class="section-tag">Financial Services</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; margin-bottom: 2rem;">
+      <h2 class="section-title" style="margin-bottom:0;">Everything your business needs to pay globally</h2>
+      <p class="section-sub" style="margin-bottom:0;">One account for all your international payment needs — from holding to sending, exchanging to receiving.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card green-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3>Multi-Currency Accounts</h3>
+        <p>Receive, hold and exchange money in 34 currencies worldwide. Get local IBANs in key territories.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>FX & Currency Exchange</h3>
+        <p>Make affordable, instant exchanges between 38 currency pairs around the clock at excellent rates.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Global Payments</h3>
+        <p>Experience 3× faster global payments with a fool-proof KYC process and guaranteed on-time delivery.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Global Payroll & Payouts</h3>
+        <p>Manage cross-border payroll and supplier payments. Save on FX with bulk payment tools.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Spending Control</h3>
+        <p>Set unique access parameters for each team member. Manage permissions easily from one dashboard.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Local Payments</h3>
+        <p>Domestic virtual IBANs in key territories for efficient payments at a lower cost. Get paid like a local.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support-section">
+  <div class="support-inner">
+    <div>
+      <div class="section-tag">Personalised Support</div>
+      <h2 class="section-title">Say goodbye to generic help</h2>
+      <p class="section-sub">Hello to personalised service that's all about you and your unique business needs. Your account manager is always available to help.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Get Started</a>
+        <a href="#" class="btn-ghost">Contact sales</a>
+      </div>
+    </div>
+    <div class="support-features">
+      <div class="support-feat">
+        <div class="support-feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div>
+          <h4>Knowledge</h4>
+          <p>Our expertise saves you time and money on global payments. We understand the nuances of cross-border transactions.</p>
+        </div>
+      </div>
+      <div class="support-feat">
+        <div class="support-feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div>
+          <h4>Advice</h4>
+          <p>Our live help and hints ensure smooth transaction processing. Reach us anytime you need guidance.</p>
+        </div>
+      </div>
+      <div class="support-feat">
+        <div class="support-feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div>
+          <h4>Analysis</h4>
+          <p>Detailed reports help you make informed decisions and optimize your international finances.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="section-tag">Trusted Worldwide</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; margin-bottom: 2rem;">
+      <h2 class="section-title" style="margin-bottom:0;">Trusted by companies of all sizes</h2>
+      <p class="section-sub" style="margin-bottom:0;">Payset has earned the trust of companies worldwide by tailoring services to the unique needs of each client.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"We manage multiple currencies, track payments, simplify reporting and pay our team in one simple dashboard. It's a huge time saver."</p>
+        <div class="testimonial-author">Jonathan Muyal</div>
+        <div class="testimonial-company">Accountant & EOR Payroll Manager · Traffic Devils</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Customer support is always available. All payments are processed instantly without any delays. Highly recommend for international business."</p>
+        <div class="testimonial-author">ABC Capital Ltd.</div>
+        <div class="testimonial-company">Verified Trustpilot Review</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Opened account for affiliate marketing activity, works smoothly, thorough compliance. Excellent service for our cross-border operations."</p>
+        <div class="testimonial-author">FN Media Ltd.</div>
+        <div class="testimonial-company">Verified Trustpilot Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="security-section">
+  <div class="security-inner">
+    <div class="section-tag">Security</div>
+    <h2 class="section-title">Your money protected 24/7</h2>
+    <p class="section-sub">Rest easy knowing your money is safe with secure storage, safeguarding, and advanced transaction monitoring.</p>
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="sec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>FCA Regulated</h3>
+        <p>Your funds are safeguarded in full compliance with FCA regulations. We hold FCA reference number 900920.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>Fraud Prevention</h3>
+        <p>We keep your money safe with advanced fraud prevention measures including 2-factor authentication and multi-signature capabilities.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#68c99b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>Data Protection</h3>
+        <p>Your sensitive data is protected by the highest industry standard security protocols. ICO Registration ZA832552.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions-section">
+  <div class="solutions-inner">
+    <div class="section-tag">Tailored Solutions</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; margin-bottom: 2rem;">
+      <h2 class="section-title" style="margin-bottom:0;">Tailored solutions for global success</h2>
+      <p class="section-sub" style="margin-bottom:0;">Whether you're a solo entrepreneur or a full-fledged enterprise, Payset is your trusted partner for global business.</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <span class="badge">Startups</span>
+        <h3>For Startups & Founders</h3>
+        <p>Fuel your growth with flexible, affordable cross-border payments designed for fast-growing businesses.</p>
+        <a href="#" class="service-link" style="margin-top:1rem;">Learn more →</a>
+      </div>
+      <div class="solution-card">
+        <span class="badge">Enterprise</span>
+        <h3>For Executives & Finance Teams</h3>
+        <p>Empower growth with seamless cross-border payments and complete control of all your international transactions.</p>
+        <a href="#" class="service-link" style="margin-top:1rem;">Learn more →</a>
+      </div>
+      <div class="solution-card">
+        <span class="badge">Supply Chain</span>
+        <h3>Import & Export Businesses</h3>
+        <p>Manage cross-border payroll and supplier payments. Save on FX with ease across your supply chain.</p>
+        <a href="#" class="service-link" style="margin-top:1rem;">Learn more →</a>
+      </div>
+      <div class="solution-card">
+        <span class="badge">Travel</span>
+        <h3>Travel & Hospitality</h3>
+        <p>Cross-border payments, low fees, and transparent reporting tailored to the travel sector's unique needs.</p>
+        <a href="#" class="service-link" style="margin-top:1rem;">Learn more →</a>
+      </div>
+      <div class="solution-card">
+        <span class="badge">eCommerce</span>
+        <h3>eCommerce & Online Businesses</h3>
+        <p>Accept international payments efficiently with local IBANs and multi-currency account management.</p>
+        <a href="#" class="service-link" style="margin-top:1rem;">Learn more →</a>
+      </div>
+      <div class="solution-card">
+        <span class="badge">Holdings</span>
+        <h3>Holding Companies</h3>
+        <p>Centralize your multi-entity finances with seamless currency management across all your holdings.</p>
+        <a href="#" class="service-link" style="margin-top:1rem;">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div style="padding: 0 5% 5rem;">
+  <div class="cta-banner">
+    <div>
+      <h2>Ready to simplify your global payments?</h2>
+      <p>Join thousands of businesses trusting Payset for seamless cross-border transactions.</p>
+    </div>
+    <div class="cta-banner-actions">
+      <a href="#" class="btn-white">Get started</a>
+      <a href="#" class="btn-outline-white">Contact sales</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">Pay<span>set</span></a>
+      <p>Pay Set Limited. 9th Floor, 9 Appold St, London EC2A 2AP, United Kingdom. FCA reference number 900920.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Financial Services</h4>
+      <ul>
+        <li><a href="#">Multi-currency accounts</a></li>
+        <li><a href="#">Currency exchange</a></li>
+        <li><a href="#">Transfer money</a></li>
+        <li><a href="#">Receive payments</a></li>
+        <li><a href="#">Store funds</a></li>
+        <li><a href="#">Security</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Who We Serve</h4>
+      <ul>
+        <li><a href="#">Startups</a></li>
+        <li><a href="#">Holding Companies</a></li>
+        <li><a href="#">Import & Export</a></li>
+        <li><a href="#">eCommerce</a></li>
+        <li><a href="#">Executives</a></li>
+        <li><a href="#">Individuals</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>By Use Case</h4>
+      <ul>
+        <li><a href="#">Travel & Hospitality</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Global Payroll</a></li>
+        <li><a href="#">FX Management</a></li>
+        <li><a href="#">Supply Chains</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="#">Help Center</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookies Policy</a></li>
+        <li><a href="#">Safeguarding Statement</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Referral Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Pay Set Limited is an authorized electronic money institution with FCA reference number 900920, incorporated under the laws of England and Wales. Company number 11529161. ©2026 Pay Set Limited. All Rights Reserved.</p>
+    <div class="footer-legal">ICO Registration ZA832552</div>
+  </div>
+</footer>
+
+</body>
+</html>

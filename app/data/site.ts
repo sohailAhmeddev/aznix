@@ -38,6 +38,7 @@ export const navigation: NavItem[] = [
   { label: 'Solutions', href: '/solutions' },
   { label: 'Innovation', href: '/innovation' },
   { label: 'Partnerships', href: '/partnerships' },
+  { label: 'Aznix pay', href: '/aznix-pay' },
   { label: 'Contact', href: '/contact' },
 ];
 

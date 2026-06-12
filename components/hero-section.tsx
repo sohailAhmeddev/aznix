@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import type { HeroAction } from '@/types/site';
-import { cn } from '@/lib/utils';
+import Link from "next/link";
+import { motion } from "framer-motion";
+import type { HeroAction } from "@/types/site";
+import { cn } from "@/lib/utils";
 
 type HeroSectionProps = {
   title: string;
@@ -13,66 +13,122 @@ type HeroSectionProps = {
 
 export function HeroSection({ title, subtitle, actions }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden pt-28 sm:pt-32">
-      <div className="hero-grid pointer-events-none absolute inset-0 opacity-60" />
-      <div className="hero-orb absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full blur-3xl" />
-      <div className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-10 lg:pb-28">
+    <section className="overflow-hidden">
+      <div className="">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.21, 1, 0.35, 1] }}
-          className="mx-auto max-w-4xl text-center"
+          transition={{ duration: 0.85, ease: [0.21, 1, 0.35, 1] }}
+          className="relative overflow-hidden"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-brand-400 shadow-[0_0_12px_rgba(251,191,36,0.9)]" />
-            Technology ecosystem. Venture builder. Digital infrastructure group.
-          </div>
-          <h1 className="mt-8 text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
-            {title}
-          </h1>
-          <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-            {subtitle}
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {actions.map((action) => (
-              <Link
-                key={action.label}
-                href={action.href}
-                className={cn(
-                  'inline-flex min-w-48 items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold transition duration-300',
-                  action.variant === 'secondary'
-                    ? 'border border-white/15 bg-white/5 text-white hover:border-brand-400/50 hover:bg-white/10'
-                    : 'bg-brand-400 text-slate-950 shadow-[0_0_40px_rgba(251,191,36,0.18)] hover:bg-brand-300',
-                )}
-              >
-                {action.label}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
+          <div
+            className="relative min-h-[540px] bg-cover bg-[center_right] bg-no-repeat sm:min-h-[600px] lg:min-h-[620px]"
+            style={{
+              backgroundImage: "url('/assests/hero-infrastructure-visual.png')",
+            }}
+          >
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.92)_34%,rgba(255,255,255,0.72)_52%,rgba(255,255,255,0.18)_72%,rgba(255,255,255,0.08)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.9),transparent_42%)]" />
+            <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(180deg,rgba(255,255,255,0.18),transparent_22%,transparent_78%,rgba(255,255,255,0.12))]" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="mt-16 grid gap-5 rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl lg:grid-cols-[1.4fr_0.9fr]"
-        >
-          <div className="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/8 via-white/[0.03] to-transparent p-8">
-            <p className="text-sm uppercase tracking-[0.28em] text-brand-300">Holding Thesis</p>
-            <p className="mt-5 max-w-2xl text-2xl leading-10 text-white">
-              We build the systems powering businesses, combining capital, product execution, and digital infrastructure into one operating model.
-            </p>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-            {[
-              ['Infrastructure-first', 'SaaS, fintech, blockchain, and enterprise systems'],
-              ['Operator mindset', 'Built to own and scale ventures over the long term'],
-            ].map(([label, body]) => (
-              <div key={label} className="rounded-[1.5rem] border border-white/10 bg-slate-950/50 p-6">
-                <p className="text-sm uppercase tracking-[0.22em] text-slate-400">{label}</p>
-                <p className="mt-4 text-base leading-7 text-slate-200">{body}</p>
+            <div className="relative z-10 flex min-h-[540px] items-center px-6 pb-10 pt-28 sm:min-h-[600px] sm:px-10 sm:pt-32 lg:min-h-[620px] lg:px-14 lg:pt-36">
+              <div className="mx-auto max-w-7xl w-full">
+                <div className="w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.65, delay: 0.05 }}
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-brand-400 shadow-[0_0_18px_rgba(251,191,36,0.85)]" />
+                    Technology ecosystem. Venture builder. Digital
+                    infrastructure group.
+                  </motion.div>
+
+                  <motion.h1
+                    initial={{ opacity: 0, y: 22 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.75,
+                      delay: 0.12,
+                      ease: [0.21, 1, 0.35, 1],
+                    }}
+                    className="mt-8 max-w-lg font-serif text-4xl font-semibold italic leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-[4.3rem]"
+                  >
+                    {title}
+                  </motion.h1>
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.75,
+                      delay: 0.2,
+                      ease: [0.21, 1, 0.35, 1],
+                    }}
+                    className="mt-6 max-w-xl text-base leading-8 text-slate-700 sm:text-lg"
+                  >
+                    {subtitle}
+                  </motion.p>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.75,
+                      delay: 0.28,
+                      ease: [0.21, 1, 0.35, 1],
+                    }}
+                    className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap"
+                  >
+                    {actions.map((action) => (
+                      <Link
+                        key={action.label}
+                        href={action.href}
+                        className={cn(
+                          "inline-flex min-w-[11rem] items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition duration-300",
+                          action.variant === "secondary"
+                            ? "border border-slate-300 bg-white/80 text-slate-950 shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur hover:border-slate-400 hover:bg-white"
+                            : "bg-brand-400 text-slate-950 shadow-[0_16px_32px_rgba(251,191,36,0.35)] hover:bg-brand-300",
+                        )}
+                      >
+                        {action.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+
+                  {/* <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.75, delay: 0.36 }}
+                  className="mt-10 grid max-w-md gap-3 sm:grid-cols-2"
+                >
+                  {[
+                    [
+                      "Infrastructure-first",
+                      "SaaS, fintech, blockchain, and enterprise systems",
+                    ],
+                    [
+                      "Operator mindset",
+                      "Built to own and scale ventures over the long term",
+                    ],
+                  ].map(([label, body]) => (
+                    <div
+                      key={label}
+                      className="rounded-[1.35rem] border border-white/70 bg-white/55 p-4 shadow-[0_14px_28px_rgba(15,23,42,0.07)] backdrop-blur"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-600">
+                        {label}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-700">
+                        {body}
+                      </p>
+                    </div>
+                  ))}
+                </motion.div> */}
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </motion.div>
       </div>
