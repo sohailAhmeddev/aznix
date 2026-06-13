@@ -12,6 +12,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isHomePage = pathname === '/';
+  const isImmersivePage = pathname === '/' || pathname === '/vps-hosting';
 
   useEffect(() => {
     setOpen(false);
@@ -22,7 +23,7 @@ export function Navbar() {
       <div
         className={cn(
           'mx-auto max-w-7xl px-5 py-3 transition duration-300',
-          isHomePage
+          isImmersivePage
             ? 'rounded-[1.75rem] border border-white/50 bg-white/18 shadow-[0_20px_50px_rgba(15,23,42,0.14)] backdrop-blur-xl'
             : 'rounded-full border border-slate-200 bg-white shadow-sm',
         )}
@@ -83,10 +84,10 @@ export function Navbar() {
                 className={cn(
                   'rounded-full px-4 py-2 text-sm transition',
                   pathname === item.href
-                    ? isHomePage
+                    ? isImmersivePage
                       ? 'bg-white/70 text-slate-950'
                       : 'bg-slate-100 text-slate-950'
-                    : isHomePage
+                    : isImmersivePage
                       ? 'text-slate-800 hover:bg-white/40 hover:text-slate-950'
                       : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950',
                 )}
@@ -101,7 +102,7 @@ export function Navbar() {
               href="/contact"
               className={cn(
                 'hidden rounded-full px-5 py-2.5 text-sm font-semibold text-slate-950 transition lg:inline-flex',
-                isHomePage
+                isImmersivePage
                   ? 'bg-brand-400 shadow-[0_14px_28px_rgba(251,191,36,0.35)] hover:bg-brand-300'
                   : 'bg-brand-400 hover:bg-brand-300',
               )}
@@ -113,7 +114,7 @@ export function Navbar() {
               onClick={() => setOpen((value) => !value)}
               className={cn(
                 'inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-950 lg:hidden',
-                isHomePage ? 'border border-white/60 bg-white/55 backdrop-blur' : 'border border-slate-200',
+                isImmersivePage ? 'border border-white/60 bg-white/55 backdrop-blur' : 'border border-slate-200',
               )}
               aria-label="Toggle navigation"
             >
@@ -126,7 +127,7 @@ export function Navbar() {
           <div
             className={cn(
               'mt-4 rounded-3xl p-4 lg:hidden',
-              isHomePage
+              isImmersivePage
                 ? 'border border-white/60 bg-white/72 backdrop-blur-xl'
                 : 'border border-slate-200 bg-white',
             )}
