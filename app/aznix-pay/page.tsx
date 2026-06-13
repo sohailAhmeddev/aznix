@@ -116,7 +116,7 @@ export default function AznixPayPage() {
   return (
     <main className="bg-[#F5F2EF] text-slate-950">
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 pb-20 pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-32">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#e8f5ee] px-4 py-2 text-sm font-semibold text-[#1a6b4a]">
               <span className="h-2.5 w-2.5 rounded-full bg-[#1a6b4a]" />

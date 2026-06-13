@@ -12,7 +12,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isHomePage = pathname === '/';
-  const isImmersivePage = pathname === '/' || pathname === '/vps-hosting';
+  const isImmersivePage =
+    pathname === '/' || pathname === '/vps-hosting' || pathname === '/aznix-pay';
 
   useEffect(() => {
     setOpen(false);
