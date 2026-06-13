@@ -51,7 +51,7 @@ export default function HomePage() {
               />
               </div>
             </div>
-            <div className="grid gap-4 lg:grid-cols-2">
+            <div className="grid gap-4 lg:auto-rows-fr lg:grid-cols-2">
               {ecosystemUnits.map((unit) => (
                 <CompanyCard key={unit.name} unit={unit} />
               ))}
