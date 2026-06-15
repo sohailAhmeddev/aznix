@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '@/components/animated-section';
+import { HeroSection } from '@/components/hero-section';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createMetadata({
@@ -78,51 +79,17 @@ const plans = [
 export default function VPSHostingPage() {
   return (
     <div className="overflow-hidden ">
-      <AnimatedSection className="px-6 pb-10 pt-24 sm:px-8 sm:pt-28 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden ">
-            <div className="grid items-center gap-8 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
-              <div className="max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-brand-300">VPS Hosting</p>
-                <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-[-0.05em] text-slate-800 sm:text-5xl lg:text-[4rem] lg:leading-[0.95]">
-                  Secure, scalable virtual servers built for modern business workloads
-                </h1>
-                <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-                  Aznix VPS Hosting gives teams dependable infrastructure for websites, applications,
-                  internal systems, and client environments with room to scale as operations grow.
-                </p>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-300"
-                  >
-                    Get a Quote
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-white"
-                  >
-                    Talk to Sales
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative mx-auto w-full max-w-[34rem]">
-                <div className="absolute inset-x-12 bottom-8 top-16 rounded-full bg-brand-100/50 blur-3xl" />
-                <Image
-                  src="/assests/12.png"
-                  alt="Illustration of globally connected VPS infrastructure"
-                  width={1448}
-                  height={1086}
-                  className="relative z-10 h-auto w-full object-contain"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
+      <HeroSection
+        eyebrow="VPS Hosting"
+        title="Secure, scalable virtual servers built for modern business workloads"
+        subtitle="Aznix VPS Hosting gives teams dependable infrastructure for websites, applications, internal systems, and client environments with room to scale as operations grow."
+        badgeText="Managed VPS. Business infrastructure. Scalable virtual servers."
+        backgroundImage="/assests/12.png"
+        actions={[
+          { label: 'Get a Quote', href: '/contact', variant: 'primary' },
+          { label: 'Talk to Sales', href: '/contact', variant: 'secondary' },
+        ]}
+      />
 
       <AnimatedSection className="px-6 py-10 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">

@@ -2,16 +2,29 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 import type { HeroAction } from "@/types/site";
 import { cn } from "@/lib/utils";
 
 type HeroSectionProps = {
   title: string;
   subtitle: string;
-  actions: HeroAction[];
+  actions?: HeroAction[];
+  badgeText?: string;
+  eyebrow?: string;
+  backgroundImage?: string;
+  children?: ReactNode;
 };
 
-export function HeroSection({ title, subtitle, actions }: HeroSectionProps) {
+export function HeroSection({
+  title,
+  subtitle,
+  actions = [],
+  badgeText = "Technology ecosystem. Venture builder. Digital infrastructure group.",
+  eyebrow,
+  backgroundImage = "/assests/hero-infrastructure-visual.png",
+  children,
+}: HeroSectionProps) {
   return (
     <section className="overflow-hidden">
       <div className="">
@@ -24,7 +37,7 @@ export function HeroSection({ title, subtitle, actions }: HeroSectionProps) {
           <div
             className="relative min-h-[540px] bg-cover bg-[center_right] bg-no-repeat sm:min-h-[600px] lg:min-h-[620px]"
             style={{
-              backgroundImage: "url('/assests/hero-infrastructure-visual.png')",
+              backgroundImage: `url('${backgroundImage}')`,
             }}
           >
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.92)_34%,rgba(255,255,255,0.72)_52%,rgba(255,255,255,0.18)_72%,rgba(255,255,255,0.08)_100%)]" />
@@ -41,9 +54,19 @@ export function HeroSection({ title, subtitle, actions }: HeroSectionProps) {
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur"
                   >
                     <span className="h-2 w-2 rounded-full bg-brand-400 shadow-[0_0_18px_rgba(251,191,36,0.85)]" />
-                    Technology ecosystem. Venture builder. Digital
-                    infrastructure group.
+                    {badgeText}
                   </motion.div>
+
+                  {eyebrow ? (
+                    <motion.p
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.65, delay: 0.08 }}
+                      className="mt-7 text-xs font-semibold uppercase tracking-[0.35em] text-brand-400"
+                    >
+                      {eyebrow}
+                    </motion.p>
+                  ) : null}
 
                   <motion.h1
                     initial={{ opacity: 0, y: 22 }}
@@ -96,6 +119,21 @@ export function HeroSection({ title, subtitle, actions }: HeroSectionProps) {
                       </Link>
                     ))}
                   </motion.div>
+
+                  {children ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.75,
+                        delay: actions.length > 0 ? 0.34 : 0.26,
+                        ease: [0.21, 1, 0.35, 1],
+                      }}
+                      className={cn(actions.length > 0 ? "mt-8" : "mt-9")}
+                    >
+                      {children}
+                    </motion.div>
+                  ) : null}
 
                   {/* <motion.div
                   initial={{ opacity: 0, y: 18 }}
