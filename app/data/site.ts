@@ -18,9 +18,9 @@ export const siteConfig = {
   description:
     'Aznix Holding builds, owns, funds, and operates technology ventures across SaaS, fintech, blockchain, AI, and enterprise infrastructure.',
   url: 'https://aznixholding.com',
-  email: 'partnerships@aznixholding.com',
-  phone: '+1 (202) 555-0147',
-  location: 'Dubai, UAE',
+  email: 'Info@aznixholding.com',
+  phone: '+1 4699608634',
+  location: '37385 Stellarview Ave, Murrieta, CA 92563.',
   statement:
     'A technology holding company shaping the next generation of digital infrastructure.',
   socialLinks: [
