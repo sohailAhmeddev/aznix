@@ -1,8 +1,15 @@
 'use client';
 
-export function ContactForm() {
+import { cn } from '@/lib/utils';
+
+type ContactFormProps = {
+  className?: string;
+  buttonClassName?: string;
+};
+
+export function ContactForm({ className, buttonClassName }: ContactFormProps) {
   return (
-    <form className="rounded-[2rem] border border-slate-200 bg-white p-6  sm:p-8">
+    <form className={cn('rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8', className)}>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
           <span className="type-label normal-case tracking-normal text-slate-700">Name</span>
@@ -29,7 +36,10 @@ export function ContactForm() {
       </label>
       <button
         type="submit"
-        className="type-button mt-6 inline-flex rounded-full bg-brand-400 px-6 py-3 text-slate-950 transition hover:bg-brand-300"
+        className={cn(
+          'type-button mt-6 inline-flex rounded-full bg-brand-400 px-6 py-3 text-slate-950 transition hover:bg-brand-300',
+          buttonClassName,
+        )}
       >
         Send Inquiry
       </button>
