@@ -94,11 +94,11 @@ export default function VPSHostingPage() {
       <AnimatedSection className="px-6 py-10 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-brand-300">Infrastructure</p>
-            <h2 className="mt-4 max-w-2xl font-serif text-3xl font-semibold italic leading-tight text-slate-900 sm:text-5xl">
+            <p className="type-overline text-brand-300">Infrastructure</p>
+            <h2 className="type-section-title mt-4 max-w-2xl text-slate-900">
               Hosting built around speed, control, and operational confidence
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+            <p className="type-body-lg mt-5 max-w-2xl text-slate-600">
               We combine flexible virtual server resources with business-ready support so teams can
               launch faster and run with more confidence.
             </p>
@@ -117,10 +117,10 @@ export default function VPSHostingPage() {
                   height={1254}
                   className="h-16 w-16 object-contain"
                 />
-                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.03em] text-slate-800">
+                <h3 className="type-card-title-lg mt-5 text-slate-800">
                   {feature.title}
                 </h3>
-                <p className="mt-4 text-base leading-8 text-slate-600">{feature.description}</p>
+                <p className="type-body-lg mt-4 text-slate-600">{feature.description}</p>
               </article>
             ))}
           </div>
@@ -130,8 +130,8 @@ export default function VPSHostingPage() {
       <AnimatedSection className="px-6 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-brand-300">Use Cases</p>
-            <h2 className="mt-5 font-serif text-3xl font-semibold italic text-slate-900 sm:text-5xl">
+            <p className="type-overline text-brand-300">Use Cases</p>
+            <h2 className="type-section-title mt-5 text-slate-900">
               Designed for teams beyond shared hosting
             </h2>
           </div>
@@ -217,7 +217,7 @@ export default function VPSHostingPage() {
                       className="flex items-center gap-4 rounded-[1.6rem] border border-white/70 bg-white p-5 shadow-[0_18px_45px_rgba(148,163,184,0.16)]"
                     >
                       <Image src={item.icon} alt="" width={1254} height={1254} className="h-12 w-12 object-contain" />
-                      <p className="max-w-[14rem] text-lg leading-7 text-slate-700">{item.title}</p>
+                      <p className="type-card-title max-w-[14rem]">{item.title}</p>
                     </div>
                   ))}
               </div>
@@ -242,7 +242,7 @@ export default function VPSHostingPage() {
                       className="flex items-center gap-4 rounded-[1.6rem] border border-white/70 bg-white p-5 shadow-[0_18px_45px_rgba(148,163,184,0.16)]"
                     >
                       <Image src={item.icon} alt="" width={1254} height={1254} className="h-12 w-12 object-contain" />
-                      <p className="max-w-[14rem] text-lg leading-7 text-slate-700">{item.title}</p>
+                      <p className="type-card-title max-w-[14rem]">{item.title}</p>
                     </div>
                   ))}
               </div>
@@ -254,8 +254,8 @@ export default function VPSHostingPage() {
       <AnimatedSection className="px-6 py-10 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-brand-300">Pricing</p>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600">
+            <p className="type-overline text-brand-300">Pricing</p>
+            <p className="type-body-lg !text-lg font-bold mx-auto mt-4 max-w-2xl italic font-serif">
               Choose a deployment path, then let us tailor the exact sizing, support level, and
               security requirements around your workload.
             </p>
@@ -272,12 +272,12 @@ export default function VPSHostingPage() {
                 }`}
               >
                 <Image src={plan.image} alt="" width={1254} height={1254} className="h-20 w-20 object-contain mx-auto" />
-                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.03em] text-slate-800">{plan.name}</h3>
+                <h3 className="type-card-title-lg mt-5 text-slate-800">{plan.name}</h3>
                 <div className="mt-6 space-y-3">
                   {plan.specs.map((spec) => (
                     <div
                       key={spec}
-                      className="rounded-full border border-slate-200/80 bg-white/80 px-4 py-2.5 text-sm text-slate-700"
+                      className="type-button rounded-full border border-slate-200/80 bg-white/80 px-4 py-2.5 text-slate-700"
                     >
                       {spec}
                     </div>
@@ -285,7 +285,7 @@ export default function VPSHostingPage() {
                 </div>
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-300"
+                  className="type-button mt-7 inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-slate-950 transition hover:bg-brand-300"
                 >
                   Get a Quote
                   <ArrowRight className="h-4 w-4" />
@@ -300,17 +300,17 @@ export default function VPSHostingPage() {
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-white/70 bg-white/92 shadow-[0_30px_80px_rgba(148,163,184,0.24)]">
           <div className="grid items-center gap-8 px-6 py-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-brand-300">Need Custom Hosting?</p>
-              <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-5xl">
+              <p className="type-overline text-brand-300">Need Custom Hosting?</p>
+              <h2 className="type-section-title mt-4 max-w-xl not-italic text-slate-900">
                 Talk with Aznix about the right VPS setup for your workload
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
+              <p className="type-body-lg mt-5 max-w-xl text-slate-600">
                 Share your traffic, applications, compliance needs, and support expectations, and we
                 will shape a hosting package around the infrastructure you actually need.
               </p>
               <Link
                 href="/contact"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-300"
+                className="type-button mt-8 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-slate-950 transition hover:bg-brand-300"
               >
                 Contact Us
                 <ArrowRight className="h-4 w-4" />

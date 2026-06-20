@@ -34,16 +34,16 @@ export function Timeline({ items }: TimelineProps) {
 
             <div className="overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,250,252,0.94))] p-5 shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition duration-300 group-hover:border-brand-200/80 group-hover:shadow-[0_24px_60px_rgba(15,23,42,0.1)] sm:p-6">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <span className="inline-flex w-fit rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-brand-400">
+                <span className="type-overline inline-flex w-fit rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-brand-400">
                   {item.year}
                 </span>
                 <span className="h-px w-full bg-gradient-to-r from-brand-100 via-slate-200 to-transparent sm:mt-4 sm:max-w-[8rem]" />
               </div>
 
-              <h3 className="mt-4 text-xl font-semibold tracking-[-0.02em] text-slate-950 sm:text-[1.35rem]">
+              <h3 className="type-card-title-lg mt-4">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">{item.description}</p>
+              <p className="type-body-muted mt-3 max-w-2xl">{item.description}</p>
             </div>
           </motion.article>
         ))}

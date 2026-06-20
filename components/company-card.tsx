@@ -22,10 +22,10 @@ export function CompanyCard({ unit }: CompanyCardProps) {
           <Icon className="h-3.5 w-3.5" />
         </div>
         <div className="">
-          <h3 className="mt-2 text-lg font-semibold text-slate-950">
+          <h3 className="type-card-title mt-2">
             {unit.name}
           </h3>
-          <p className="text-xs uppercase tracking-[0.25em] text-slate-600">
+          <p className="type-label">
             {unit.sector}
           </p>
         </div>
@@ -33,7 +33,7 @@ export function CompanyCard({ unit }: CompanyCardProps) {
       <div className="mt-2 flex-1">
         {/* <p className="text-xs uppercase tracking-[0.25em] text-slate-600">{unit.sector}</p>
         <h3 className="mt-2 text-xl font-semibold text-slate-950">{unit.name}</h3> */}
-        <p className="mt-1 text-sm leading-7 text-slate-700">
+        <p className="type-body mt-1">
           {unit.description}
         </p>
       </div>
@@ -41,7 +41,7 @@ export function CompanyCard({ unit }: CompanyCardProps) {
         {unit.services.map((service) => (
           <span
             key={service}
-            className="rounded-full border border-slate-200 bg-white px-1 py-1 text-xs text-slate-700"
+            className="type-chip rounded-full border border-slate-200 bg-white px-2 py-1 text-slate-700"
           >
             {service}
           </span>

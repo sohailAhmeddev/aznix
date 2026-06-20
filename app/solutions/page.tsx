@@ -43,13 +43,13 @@ export default function SolutionsPage() {
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.2rem] border border-white/80 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.99),rgba(241,245,255,0.94)_44%,rgba(255,255,255,0.96)_100%)] p-8 shadow-[0_25px_80px_rgba(148,163,184,0.18)] sm:p-10 lg:p-12">
           <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
             <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.38em] text-brand-400">
+              <p className="type-overline text-brand-400">
                 Solutions
               </p>
-              <h1 className="mt-4 max-w-[46rem] font-serif text-[2.7rem] font-semibold italic leading-[1.05] tracking-[-0.04em] text-slate-950 sm:text-[3.2rem]">
+              <h1 className="type-hero-title mt-4 max-w-[46rem]">
                 Technology systems engineered around business-critical problems
               </h1>
-              <p className="mt-6 max-w-[30rem] text-[1.02rem] leading-8 text-slate-600">
+              <p className="type-body-lg mt-6 max-w-[30rem] text-slate-600">
                 Aznix solutions are designed to turn operational complexity into
                 scalable infrastructure, intelligent automation, and lasting
                 enterprise advantage.
@@ -62,7 +62,7 @@ export default function SolutionsPage() {
                   return (
                     <span
                       key={pill.label}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/88 px-3 py-2 text-[0.72rem] font-medium text-slate-600 shadow-[0_10px_24px_rgba(148,163,184,0.08)]"
+                      className="type-chip inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/88 px-3 py-2 shadow-[0_10px_24px_rgba(148,163,184,0.08)]"
                     >
                       <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-50 text-indigo-400">
                         <Icon className="h-3 w-3" />
@@ -93,13 +93,13 @@ export default function SolutionsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-3 lg:grid-cols-[1fr_0.43fr] lg:items-end">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+              <p className="type-overline text-brand-400">
                 Solution Areas
               </p>
-              <h2 className="mt-4 max-w-[46rem] font-serif text-[2.7rem] font-semibold italic leading-[1.05] tracking-[-0.04em] text-slate-950 sm:text-[3.2rem]">
+              <h2 className="type-section-title mt-4 max-w-[46rem]">
                 From bottlenecks to infrastructure advantage
               </h2>
-              <p className="mt-4 max-w-[44rem] text-[1.02rem] leading-8 text-slate-600">
+              <p className="type-body-lg mt-4 max-w-[44rem] text-slate-600">
                 Each solution area is designed around a simple framework:
                 identify the operational problem, build the right system layer,
                 and create measurable business impact.
@@ -112,10 +112,10 @@ export default function SolutionsPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-400">
                     <ChartColumnBig className="h-5 w-5" />
                   </div>
-                  <p className="mt-4 text-base font-semibold tracking-[-0.03em] text-slate-950">
+                  <p className="type-card-title mt-4">
                     Built for impact.
                   </p>
-                  <p className="mt-2 text-xs leading-6 text-slate-600">
+                  <p className="type-body-muted mt-2">
                     Each solution connects people, data, and systems for
                     stronger results.
                   </p>
@@ -146,7 +146,7 @@ export default function SolutionsPage() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="text-[1rem] font-semibold tracking-[-0.03em] text-slate-950">
+                      <h3 className="type-card-title">
                         {item.title}
                       </h3>
                     </div>
@@ -154,10 +154,10 @@ export default function SolutionsPage() {
 
                   <div className="mt-2 grid gap-4 md:grid-cols-[0.95fr_1.05fr] md:items-start">
                     <div className="min-w-0">
-                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-brand-400">
+                      <p className="type-overline text-brand-400">
                         Problem
                       </p>
-                      <p className="mt-3 text-xs leading-6 text-slate-600">
+                      <p className="type-body-muted mt-3">
                         {item.problem}
                       </p>
                     </div>
@@ -174,10 +174,10 @@ export default function SolutionsPage() {
 
                   <div className="mt-3 grid gap-4 md:grid-cols-2 relative">
                     <div className="mr-1">
-                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-indigo-400">
+                      <p className="type-overline text-indigo-400">
                         Solution
                       </p>
-                      <p className="mt-3 text-xs leading-6 text-slate-600">
+                      <p className="type-body-muted mt-3">
                         {item.solution}
                       </p>
                     </div>
@@ -186,10 +186,10 @@ export default function SolutionsPage() {
                       className="hidden md:block absolute left-1/2 top-5 bottom-1 w-px -translate-x-1/2 bg-slate-300 h-28"
                     />
                     <div className="ml-1">
-                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-brand-400">
+                      <p className="type-overline text-brand-400">
                         Impact
                       </p>
-                      <p className="mt-3 text-xs leading-6 text-slate-600">
+                      <p className="type-body-muted mt-3">
                         {item.impact}
                       </p>
                     </div>
@@ -199,7 +199,7 @@ export default function SolutionsPage() {
                     {item.capabilities.map((capability) => (
                       <span
                         key={capability}
-                        className="rounded-full border border-indigo-100 bg-white/88 px-3 py-1 text-[0.66rem] font-medium text-slate-500 shadow-[0_8px_20px_rgba(148,163,184,0.06)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,247,255,0.92))] "
+                        className="type-chip rounded-full border border-indigo-100 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,247,255,0.92))] px-3 py-1 text-slate-500 shadow-[0_8px_20px_rgba(148,163,184,0.06)]"
                       >
                         {capability}
                       </span>
@@ -208,7 +208,7 @@ export default function SolutionsPage() {
 
                   <Link
                     href={`/solutions/${item.slug}`}
-                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/92 px-5 py-3 text-xs font-semibold text-slate-950 transition hover:border-brand-300/40 hover:bg-white"
+                    className="type-button mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/92 px-5 py-3 text-slate-950 transition hover:border-brand-300/40 hover:bg-white"
                   >
                     Explore Service
                     <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-0.5" />
@@ -223,13 +223,13 @@ export default function SolutionsPage() {
       <AnimatedSection className="px-6 pb-20 pt-6 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl items-center gap-8 overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(239,243,255,0.92))] p-8 shadow-[0_28px_80px_rgba(148,163,184,0.16)] sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+            <p className="type-overline text-brand-400">
               Infrastructure Strategy
             </p>
-            <h2 className="mt-4 max-w-[33rem] text-[2.8rem] font-semibold leading-[1.02] tracking-[-0.04em] text-slate-950 sm:text-[3.2rem]">
+            <h2 className="type-section-title mt-4 max-w-[33rem] not-italic">
               Build around systems that create long-term operating leverage
             </h2>
-            <p className="mt-5 max-w-[28rem] text-base leading-8 text-slate-600">
+            <p className="type-body-lg mt-5 max-w-[28rem] text-slate-600">
               Aznix focuses on high-trust, high-complexity software layers that
               create durable enterprise value.
             </p>
@@ -246,7 +246,7 @@ export default function SolutionsPage() {
             />
             <Link
               href="/partnerships"
-              className="absolute bottom-6 right-4 z-20 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-300 sm:right-8 lg:bottom-8"
+              className="type-button absolute bottom-6 right-4 z-20 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-slate-950 transition hover:bg-brand-300 sm:right-8 lg:bottom-8"
             >
               Discuss a Partnership
               <ArrowRight className="h-4 w-4" />

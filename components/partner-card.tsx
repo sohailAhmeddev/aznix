@@ -20,9 +20,9 @@ export function PartnerCard({ partner }: PartnerCardProps) {
       <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-brand-300">
         <Icon className="h-5 w-5" />
       </div>
-      <h3 className="mt-6 text-2xl font-semibold text-slate-950">{partner.title}</h3>
-      <p className="mt-4 text-base leading-7 text-slate-700">{partner.description}</p>
-      <ul className="mt-6 space-y-3 text-sm text-slate-700">
+      <h3 className="type-card-title-lg mt-6">{partner.title}</h3>
+      <p className="type-body mt-4">{partner.description}</p>
+      <ul className="type-body mt-6 space-y-3 text-slate-700">
         {partner.highlights.map((highlight) => (
           <li key={highlight} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
             {highlight}

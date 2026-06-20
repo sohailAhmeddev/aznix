@@ -119,10 +119,10 @@ export default function HomePage() {
                 className="flex items-center justify-between rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 h-fit"
               >
                 <div>
-                  <p className="text-lg font-semibold text-slate-950">
+                  <p className="type-card-title">
                     {item.title}
                   </p>
-                  <p className="mt-2 text-sm leading-7 text-slate-700">
+                  <p className="type-body mt-2">
                     {item.body}
                   </p>
                 </div>
@@ -153,13 +153,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.34em] text-brand-300">
+              <p className="type-overline text-brand-300">
                 Scale
               </p>
-              <h2 className="mt-5 font-serif text-4xl font-semibold italic leading-[1.05] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-[4rem]">
+              <h2 className="type-section-title mt-5">
                 The operating momentum behind the Aznix ecosystem
               </h2>
-              <p className="mt-7 text-lg leading-9 text-slate-700">
+              <p className="type-body-lg mt-7">
                 Aznix combines venture velocity with product discipline,
                 creating multiple opportunities for compounding value across
                 the group.
@@ -203,20 +203,20 @@ export default function HomePage() {
       <AnimatedSection className="px-6 pb-20 pt-6 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl items-center gap-8 overflow-hidden rounded-[2rem] border border-white/70 bg-white/92 p-8 shadow-[0_30px_80px_rgba(148,163,184,0.22)] sm:p-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.34em] text-brand-300">
-              Partnerships
-            </p>
-            <h2 className="mt-5 font-serif text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
-              Build With Aznix
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-slate-700">
-              {siteConfig.name} partners with investors, operators, and
-              technology leaders to accelerate the next era of business
-              infrastructure.
+              <p className="type-overline text-brand-300">
+                Partnerships
+              </p>
+              <h2 className="type-section-title mt-5 not-italic">
+                Build With Aznix
+              </h2>
+              <p className="type-body-lg mt-6">
+                {siteConfig.name} partners with investors, operators, and
+                technology leaders to accelerate the next era of business
+                infrastructure.
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-400 px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-brand-300"
+              className="type-button mt-8 inline-flex items-center gap-2 rounded-full bg-brand-400 px-7 py-3.5 text-slate-950 transition hover:bg-brand-300"
             >
               Contact Us
               <span aria-hidden="true">-&gt;</span>

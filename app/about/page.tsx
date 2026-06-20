@@ -82,16 +82,16 @@ export default function AboutPage() {
         badgeText="Holding company. Long-range value creation. Enterprise-grade digital infrastructure."
         backgroundImage="/assests/about-hero-image.png"
       >
-        <div className="grid max-w-[38rem] gap-3 rounded-[1.75rem] border border-white/70 bg-white/78 p-4 shadow-[0_18px_44px_rgba(15,23,42,0.1)] backdrop-blur sm:grid-cols-3 sm:p-5">
+        <div className="grid max-w-[40rem] gap-2 rounded-[1.75rem] border border-white/70 bg-white/78 p-2 shadow-[0_18px_44px_rgba(15,23,42,0.1)] backdrop-blur sm:grid-cols-3 sm:p-2">
           {highlights.map((item) => {
             const Icon = item.icon;
 
             return (
-              <div key={item.title} className="flex min-w-0 items-start gap-3 rounded-2xl px-2 py-2">
+              <div key={item.title} className="flex min-w-0 items-center gap-2 rounded-2xl px-2 py-2">
                 <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-50 text-brand-400">
                   <Icon className="h-4 w-4" />
                 </div>
-                <p className="text-sm font-medium leading-6 text-slate-700">{item.title}</p>
+                <p className="!text-xs type-body font-normal">{item.title}</p>
               </div>
             );
           })}
@@ -111,10 +111,10 @@ export default function AboutPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-50 text-brand-400">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h2 className="mt-5 text-[1.7rem] font-semibold tracking-[-0.03em] text-slate-950">
+                <h2 className="type-card-title-lg mt-5">
                   {card.title}
                 </h2>
-                <p className="mt-4 text-base leading-8 text-slate-600">{card.body}</p>
+                <p className="type-body-lg mt-4 text-slate-600">{card.body}</p>
                 <div className="mt-8 flex justify-end text-brand-400 transition duration-300 group-hover:translate-x-1">
                   <ArrowRight className="h-5 w-5" />
                 </div>
@@ -126,13 +126,13 @@ export default function AboutPage() {
 
       <AnimatedSection className="px-6 py-14 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+          <p className="type-overline text-brand-400">
             Core Values
           </p>
-          <h2 className="mt-4 max-w-4xl font-serif text-4xl font-semibold italic leading-tight tracking-[-0.04em] text-slate-950 sm:text-5xl">
+          <h2 className="type-section-title mt-4 max-w-4xl">
             Operating principles behind the Aznix ecosystem
           </h2>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="type-body-lg mt-4 max-w-4xl text-slate-600">
             Our ventures share a common foundation: conviction in infrastructure,
             disciplined execution, and a long-term ownership mindset.
           </p>
@@ -149,10 +149,10 @@ export default function AboutPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-50 text-brand-400">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-5 text-[1.65rem] font-semibold tracking-[-0.03em] text-slate-950">
+                  <h3 className="type-card-title-lg mt-5">
                     {pillar.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{pillar.description}</p>
+                  <p className="type-body-muted mt-3">{pillar.description}</p>
                 </article>
               );
             })}
@@ -163,13 +163,13 @@ export default function AboutPage() {
       <AnimatedSection className="px-6 py-14 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="rounded-[2rem] border border-slate-200/80 bg-white/92 p-7 shadow-[0_18px_50px_rgba(148,163,184,0.12)] sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+            <p className="type-overline text-brand-400">
               Leadership
             </p>
-            <h2 className="mt-4 max-w-xl font-serif text-4xl font-semibold italic leading-tight tracking-[-0.04em] text-slate-950">
+            <h2 className="type-section-title mt-4 max-w-xl">
               Built by operators who think in systems, not short campaigns
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
+            <p className="type-body-lg mt-4 max-w-xl text-slate-600">
               Our leadership structure is designed to align strategy, venture incubation,
               product execution, and ecosystem partnerships.
             </p>
@@ -189,10 +189,10 @@ export default function AboutPage() {
                           <Icon className="h-5 w-5" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold tracking-[-0.02em] text-slate-950">
+                          <h3 className="type-card-title-lg">
                             {member.name}
                           </h3>
-                          <p className="mt-3 text-sm leading-7 text-slate-600">
+                          <p className="type-body-muted mt-3">
                             {member.description}
                           </p>
                         </div>
@@ -206,13 +206,13 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-[2rem] border border-slate-200/80 bg-white/92 p-7 shadow-[0_18px_50px_rgba(148,163,184,0.12)] sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+            <p className="type-overline text-brand-400">
               Timeline
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold italic leading-tight tracking-[-0.04em] text-slate-950">
+            <h2 className="type-section-title mt-4">
               From thesis to ecosystem
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
+            <p className="type-body-lg mt-4 max-w-2xl text-slate-600">
               Aznix continues to evolve as an integrated venture and infrastructure platform.
             </p>
 
@@ -228,14 +228,14 @@ export default function AboutPage() {
                   </div>
 
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <span className="inline-flex w-fit rounded-full border border-brand-200 bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-brand-400">
+                    <span className="type-overline inline-flex w-fit rounded-full border border-brand-200 bg-amber-50 px-3 py-1 text-brand-400">
                       {item.year}
                     </span>
                     <div>
-                      <h3 className="text-xl font-semibold tracking-[-0.02em] text-slate-950">
+                      <h3 className="type-card-title-lg">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                      <p className="type-body-muted mt-3">{item.description}</p>
                     </div>
                   </div>
                 </article>
@@ -248,20 +248,20 @@ export default function AboutPage() {
       <AnimatedSection className="px-6 pb-20 pt-10 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl items-center gap-8 overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(238,242,255,0.88))] p-8 shadow-[0_28px_80px_rgba(148,163,184,0.16)] sm:p-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+            <p className="type-overline text-brand-400">
               Next Chapter
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold italic leading-tight tracking-[-0.04em] text-slate-950">
+            <h2 className="type-section-title mt-4">
               Partner with a holding company built to compound technology value
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            <p className="type-body-lg mt-5 text-slate-600">
               Whether you are exploring strategic collaboration, venture alignment, or digital
               infrastructure opportunities, {siteConfig.shortName} is built to move at the system
               level.
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-300"
+              className="type-button mt-7 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-slate-950 transition hover:bg-brand-300"
             >
               Start a Conversation
               <ArrowRight className="h-4 w-4" />

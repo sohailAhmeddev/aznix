@@ -40,8 +40,8 @@ export default function ContactPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-400/10 text-brand-300">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="mt-5 text-sm uppercase tracking-[0.25em] text-slate-600">{item.label}</p>
-                    <p className="mt-3 text-lg text-slate-950">{item.value}</p>
+                    <p className="type-label mt-5">{item.label}</p>
+                    <p className="type-card-title mt-3">{item.value}</p>
                   </div>
                 );
 

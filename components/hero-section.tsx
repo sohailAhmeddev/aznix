@@ -51,7 +51,7 @@ export function HeroSection({
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.65, delay: 0.05 }}
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur"
+                    className="type-body inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/80 px-4 py-2 font-medium shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur"
                   >
                     <span className="h-2 w-2 rounded-full bg-brand-400 shadow-[0_0_18px_rgba(251,191,36,0.85)]" />
                     {badgeText}
@@ -62,7 +62,7 @@ export function HeroSection({
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.65, delay: 0.08 }}
-                      className="mt-7 text-xs font-semibold uppercase tracking-[0.35em] text-brand-400"
+                      className="type-overline mt-7 text-brand-400"
                     >
                       {eyebrow}
                     </motion.p>
@@ -76,7 +76,7 @@ export function HeroSection({
                       delay: 0.12,
                       ease: [0.21, 1, 0.35, 1],
                     }}
-                    className="mt-8 max-w-lg font-serif text-4xl font-semibold italic leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-[4.3rem]"
+                    className="type-hero-title mt-8 max-w-lg"
                   >
                     {title}
                   </motion.h1>
@@ -89,7 +89,7 @@ export function HeroSection({
                       delay: 0.2,
                       ease: [0.21, 1, 0.35, 1],
                     }}
-                    className="mt-6 max-w-xl text-base leading-8 text-slate-700 sm:text-lg"
+                    className="type-body-lg mt-6 max-w-xl"
                   >
                     {subtitle}
                   </motion.p>
@@ -109,7 +109,7 @@ export function HeroSection({
                         key={action.label}
                         href={action.href}
                         className={cn(
-                          "inline-flex min-w-[11rem] items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition duration-300",
+                          "type-button inline-flex min-w-[11rem] items-center justify-center rounded-full px-6 py-3.5 transition duration-300",
                           action.variant === "secondary"
                             ? "border border-slate-300 bg-white/80 text-slate-950 shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur hover:border-slate-400 hover:bg-white"
                             : "bg-brand-400 text-slate-950 shadow-[0_16px_32px_rgba(251,191,36,0.35)] hover:bg-brand-300",

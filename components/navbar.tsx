@@ -83,7 +83,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'rounded-full px-4 py-2 text-sm transition',
+                  'type-button rounded-full px-4 py-2 transition',
                   pathname === item.href
                     ? isImmersivePage
                       ? 'bg-white/70 text-slate-950'
@@ -102,7 +102,7 @@ export function Navbar() {
             <Link
               href="/contact"
               className={cn(
-                'hidden rounded-full px-5 py-2.5 text-sm font-semibold text-slate-950 transition lg:inline-flex',
+                'type-button hidden rounded-full px-5 py-2.5 text-slate-950 transition lg:inline-flex',
                 isImmersivePage
                   ? 'bg-brand-400 shadow-[0_14px_28px_rgba(251,191,36,0.35)] hover:bg-brand-300'
                   : 'bg-brand-400 hover:bg-brand-300',
@@ -139,7 +139,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'rounded-2xl px-4 py-3 text-sm transition',
+                    'type-button rounded-2xl px-4 py-3 transition',
                     pathname === item.href
                       ? 'bg-slate-100 text-slate-950'
                       : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950',
@@ -150,7 +150,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/contact"
-                className="mt-2 rounded-2xl bg-brand-400 px-4 py-3 text-sm font-semibold text-slate-950"
+                className="type-button mt-2 rounded-2xl bg-brand-400 px-4 py-3 text-slate-950"
               >
                 Get in Touch
               </Link>

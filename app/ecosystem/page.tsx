@@ -54,32 +54,32 @@ export default function EcosystemPage() {
         badgeText="Shared infrastructure. Unified data. Scalable impact."
         backgroundImage="/assests/about/1.png"
       >
-        <div className="grid max-w-[38rem] gap-3 rounded-[1.75rem] border border-white/70 bg-white/78 p-4 shadow-[0_18px_44px_rgba(15,23,42,0.1)] backdrop-blur sm:grid-cols-3 sm:p-5">
-          <div className="flex min-w-0 items-start gap-3 rounded-2xl px-2 py-2">
+        <div className="grid max-w-[40rem] gap-1 rounded-[1.75rem] border border-white/70 bg-white/78 p-2 shadow-[0_18px_44px_rgba(15,23,42,0.1)] backdrop-blur sm:grid-cols-3 sm:p-2">
+          <div className="flex min-w-0 items-start gap-1 rounded-2xl px-1 py-2">
             <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-50 text-brand-400">
               <ShieldCheck className="h-4 w-4" />
             </div>
             <div>
-              <p className="text-sm font-medium leading-6 text-slate-700">Shared infrastructure</p>
-              <p className="mt-1 text-xs leading-6 text-slate-500">One platform, many ventures.</p>
+              <p className="type-body font-medium">Shared infrastructure</p>
+              <p className="type-body-muted mt-1">One platform, many ventures.</p>
             </div>
           </div>
-          <div className="flex min-w-0 items-start gap-3 rounded-2xl px-2 py-2">
+          <div className="flex min-w-0 items-start gap-1 rounded-2xl px-1 py-2">
             <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-50 text-brand-400">
               <Orbit className="h-4 w-4" />
             </div>
             <div>
-              <p className="text-sm font-medium leading-6 text-slate-700">Unified data</p>
-              <p className="mt-1 text-xs leading-6 text-slate-500">Connected intelligence layers.</p>
+              <p className="type-body font-medium">Unified data</p>
+              <p className="type-body-muted mt-1">Connected intelligence layers.</p>
             </div>
           </div>
-          <div className="flex min-w-0 items-start gap-3 rounded-2xl px-2 py-2">
+          <div className="flex min-w-0 items-start gap-1 rounded-2xl px-1 py-2">
             <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-50 text-brand-400">
               <Rocket className="h-4 w-4" />
             </div>
             <div>
-              <p className="text-sm font-medium leading-6 text-slate-700">Compounding growth</p>
-              <p className="mt-1 text-xs leading-6 text-slate-500">Built to scale across categories.</p>
+              <p className="type-body font-medium">Compounding growth</p>
+              <p className="type-body-muted mt-1">Built to scale across categories.</p>
             </div>
           </div>
         </div>
@@ -87,10 +87,10 @@ export default function EcosystemPage() {
 
       <AnimatedSection className="px-6 py-8 sm:px-8 lg:px-10" id="subsidiaries">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+          <p className="type-overline text-brand-400">
             Subsidiaries
           </p>
-          <h2 className="mt-4 max-w-4xl font-serif text-4xl font-semibold italic leading-tight tracking-[-0.04em] text-slate-950 sm:text-5xl">
+          <h2 className="type-section-title mt-4 max-w-4xl">
             Specialized ventures with shared infrastructure DNA.
           </h2>
 
@@ -108,24 +108,24 @@ export default function EcosystemPage() {
                       <Icon className="h-9 w-9" />
                     </div>
                     <div>
-                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-slate-500 sm:text-xs">
+                      <p className="type-overline text-slate-500">
                         {unit.sector}
                       </p>
-                      <h3 className="mt-3 font-serif text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-[2.1rem]">
+                      <h3 className="mt-3 font-serif text-3xl font-semibold tracking-[-0.04em] text-slate-950 lg:text-[1.8rem] 3xl:text-[2.1rem]">
                         {unit.name}
                       </h3>
                     </div>
                   </div>
 
                   <div>
-                    <p className="text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+                    <p className="type-body-lg text-slate-600">
                       {unit.description}
                     </p>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {unit.services.map((service) => (
                         <span
                           key={service}
-                          className="rounded-full border border-indigo-100 bg-white/90 px-3 py-1 text-[0.68rem] font-medium text-slate-500 shadow-[0_8px_20px_rgba(148,163,184,0.08)] sm:text-xs"
+                          className="type-chip rounded-full border border-indigo-100 bg-white/90 px-3 py-1 text-slate-500 shadow-[0_8px_20px_rgba(148,163,184,0.08)]"
                         >
                           {service}
                         </span>
@@ -136,10 +136,10 @@ export default function EcosystemPage() {
                   <div className="rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(245,247,255,0.92),rgba(255,255,255,0.96))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_16px_30px_rgba(148,163,184,0.08)]">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-indigo-400">
+                        <p className="type-overline text-indigo-400">
                           Future Roadmap
                         </p>
-                        <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+                        <p className="type-body-lg mt-4 text-slate-600">
                           {unit.roadmap}
                         </p>
                       </div>
@@ -153,8 +153,8 @@ export default function EcosystemPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="px-6 py-10 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl items-center gap-6 overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,255,0.92))] p-8 shadow-[0_28px_80px_rgba(148,163,184,0.16)] sm:p-10 lg:grid-cols-[0.46fr_1.54fr] lg:gap-10">
+      <AnimatedSection className="px-6 py-2 sm:px-8 lg:px-10">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 overflow-hidden rounded-[2rem]  sm:p-10 lg:grid-cols-[0.46fr_1.54fr] lg:gap-10">
           <div className="relative">
             <div className="absolute inset-12 rounded-full bg-brand-100/35 blur-3xl" />
             <Image
@@ -167,40 +167,33 @@ export default function EcosystemPage() {
           </div>
 
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-400">
+            <p className="!text-xs type-overline text-brand-400">
               Ecosystem Growth
             </p>
-            <h2 className="mt-4 max-w-4xl font-serif text-4xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 xl:text-[3.4rem]">
+            <h2 className="text-2xl mt-4 max-w-4xl italic font-serif font-bold">
               Built to scale. Designed to compound.
             </h2>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              <div className="rounded-[1.4rem] border border-slate-200/70 bg-white/92 p-5 shadow-[0_16px_35px_rgba(148,163,184,0.1)] xl:min-h-[13.5rem]">
-                <p className="text-4xl font-semibold tracking-[-0.05em] text-slate-950">
-                  {ecosystemUnits.length}
-                </p>
-                <p className="mt-2 text-sm font-medium text-slate-700">Ventures</p>
-              </div>
-
               {growthPillars.map((pillar) => {
                 const Icon = pillar.icon;
 
                 return (
                   <div
                     key={pillar.title}
-                    className="rounded-[1.4rem] border border-slate-200/70 bg-white/92 p-5 shadow-[0_16px_35px_rgba(148,163,184,0.08)] xl:min-h-[13.5rem]"
+                    className="rounded-[1.4rem] border border-slate-200/70 bg-white p-5 shadow-[0_16px_35px_rgba(148,163,184,0.08)] xl:min-h-[13.5rem]"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-400">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="mt-3 text-sm font-semibold text-slate-900">{pillar.title}</p>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{pillar.description}</p>
+                    <p className="type-card-title !text-sm mt-3 text-slate-900">{pillar.title}</p>
+                    <p className="type-body-muted !text-xs !leading-6 mt-2">{pillar.description}</p>
                   </div>
                 );
               })}
             </div>
 
-            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600">
+            <p className="type-body-lg mt-6 max-w-3xl text-slate-600">
               Our holding model is designed to create repeatable venture momentum across software infrastructure, financial systems, and intelligent automation.
             </p>
           </div>
@@ -210,15 +203,15 @@ export default function EcosystemPage() {
       <AnimatedSection className="px-6 pb-20 pt-4 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl items-center gap-8 overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(239,243,255,0.92))] p-8 shadow-[0_28px_80px_rgba(148,163,184,0.16)] sm:p-10 lg:grid-cols-[0.88fr_1.12fr]">
           <div className="max-w-xl">
-            <h2 className="font-serif text-4xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-[3.2rem]">
+            <h2 className="type-section-title !text-4xl !leading-8">
               Explore where the Aznix ecosystem is heading next.
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            <p className="type-body-lg mt-5 text-slate-600">
               Discover upcoming initiatives, innovation pipelines, and the future of our connected ventures.
             </p>
             <Link
               href="/innovation"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-300"
+              className="type-button mt-7 inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 text-slate-950 transition hover:bg-brand-300"
             >
               See Innovation Focus
               <ArrowRight className="h-4 w-4" />

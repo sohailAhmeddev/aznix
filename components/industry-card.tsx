@@ -21,9 +21,9 @@ export function IndustryCard({ industry }: IndustryCardProps) {
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-300">
           <Icon className="h-5 w-5" />
         </div>
-        <h3 className="text-xl font-semibold text-slate-950">{industry.name}</h3>
+        <h3 className="type-card-title-lg">{industry.name}</h3>
       </div>
-      <p className="mt-4 text-sm leading-7 text-slate-700">{industry.description}</p>
+      <p className="type-body mt-4">{industry.description}</p>
     </motion.article>
   );
 }

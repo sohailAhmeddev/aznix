@@ -72,7 +72,7 @@ export function StatsCounter({ stat, illustration }: StatsCounterProps) {
             {count}
             {stat.suffix}
           </p>
-          <p className="mt-3 text-sm uppercase tracking-[0.28em] text-slate-600">{stat.label}</p>
+          <p className="type-label mt-3">{stat.label}</p>
         </div>
       </div>
     </motion.div>
