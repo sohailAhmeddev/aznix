@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { footerColumns, siteConfig } from '@/app/data/site';
+import AznixLogo from './Logo';
 
 export function Footer() {
   return (
@@ -7,7 +8,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_repeat(5,1fr)]">
           <div className="max-w-sm">
-            <p className="type-card-title-lg">{siteConfig.name}</p>
+            <p className="type-card-title-lg">
+              <AznixLogo variant="primary" className="h-auto w-64 " />
+            </p>
             <p className="type-body mt-4">{siteConfig.statement}</p>
             <div className="mt-6 flex gap-3">
               {siteConfig.socialLinks.map((social) => (
